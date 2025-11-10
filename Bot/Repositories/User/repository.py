@@ -1,5 +1,6 @@
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
+
 from Bot.Database.model import User
 
 
@@ -15,7 +16,7 @@ class UserRespository:
             Telegram_id=telegram_id, First_name=first_name, Username=username
         )
         session.add(new_user)
-        await session.commit()
+        await session.flush()
         await session.refresh(new_user)
         return new_user
 

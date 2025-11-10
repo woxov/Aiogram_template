@@ -1,2 +1,2 @@
-from .base import Base
-from .model import User
+from .base import Base  # noqa
+from .model import User  # noqa
